@@ -10,10 +10,10 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 const qq = new QueryClient();
-export const metadata = {
-  title: "KAM",
-  description: "KAM",
-};
+// export const metadata = {
+//   title: "KAM",
+//   description: "KAM",
+// };
 
 const RootLayout = ({ children, session }) => {
   return (
