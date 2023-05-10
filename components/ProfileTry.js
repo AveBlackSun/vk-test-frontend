@@ -28,7 +28,7 @@ const Profile = ({ name, udata, id }) => {
   };
 
   const { data: posts = [] } = useQuery(["posts"], async () => {
-    const res = await axios.get(`http://localhost:4000/api/users_posts/${id}`);
+    const res = await axios.get(`${process.env.API}/api/users_posts/${id}`);
     console.log(res);
     return res.data;
   });
@@ -42,7 +42,7 @@ const Profile = ({ name, udata, id }) => {
       formData.append("text", post);
       formData.append("creator", id);
       const res = await axios.post(
-        `http://localhost:4000/api/create_post/`,
+        `${process.env.API}/api/create_post/`,
         formData,
         {
           Authorization: `Bearer ${token}`,

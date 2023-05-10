@@ -28,7 +28,7 @@ const Form = ({ type }) => {
     formData.append("creator", session?.user._id);
 
     try {
-      const response = await fetch(`http://localhost:4000/api/save/`, {
+      const response = await fetch(`${process.env.API}/api/save/`, {
         method: "POST",
         body: formData,
         headers: {

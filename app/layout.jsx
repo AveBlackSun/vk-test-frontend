@@ -15,13 +15,7 @@ export const metadata = {
   description: "KAM",
 };
 
-const RootLayout = ({
-  children,
-  session,
-}: {
-  children: React.ReactNode;
-  session: any;
-}) => {
+const RootLayout = ({ children, session }) => {
   return (
     <html lang="en">
       <body className="bg-white min-h-screen text-black">

@@ -14,7 +14,7 @@ export default function Home() {
     );
   }
 
-  if (!session) {
+  if (!session || !session.user || !session.user._id) {
     return (
       <div>
         <h2>Need to Login</h2>
@@ -22,7 +22,7 @@ export default function Home() {
     );
   }
 
-  router.push(`/profile/${session?.user._id}`);
+  router.push(`/profile/${session.user._id}`);
   return (
     <div>
       <h2>Redirecting</h2>

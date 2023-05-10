@@ -22,7 +22,7 @@ const Post = ({ post }) => {
         >
           {post.creatorimage && (
             <img
-              src={`http://localhost:4000/uploads/${post.creatorimage}`}
+              src={`${process.env.API}/uploads/${post.creatorimage}`}
               alt="Profile image"
               className="w-10 h-10 object-cover rounded-full mr-2"
             />
@@ -34,7 +34,7 @@ const Post = ({ post }) => {
 
       {post.image && (
         <img
-          src={`http://localhost:4000/uploads/${post.image}`}
+          src={`${process.env.API}/uploads/${post.image}`}
           alt="Post image"
           className=" max-h-96 w-1/3 object-cover block "
         />

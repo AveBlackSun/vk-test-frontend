@@ -16,7 +16,7 @@ const Regiser = () => {
     e.preventDefault();
     console.log(name, email, password);
     try {
-      const { data } = await axios.post("http://localhost:4000/users/", {
+      const { data } = await axios.post(`${process.env.API}/users/`, {
         name,
         email,
         password,

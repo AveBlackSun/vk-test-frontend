@@ -44,7 +44,7 @@ const EditProfilePage = () => {
     }
     try {
       const response = await axios.post(
-        `http://localhost:4000/api/user-photo/${session.user._id}`,
+        `${process.env.API}/api/user-photo/${session.user._id}`,
         formData,
         {
           headers: {
@@ -65,7 +65,7 @@ const EditProfilePage = () => {
     console.log(session.user._id);
     try {
       const response = await axios.patch(
-        `http://localhost:4000/user/${session.user._id}`,
+        `${process.env.API}/user/${session.user._id}`,
         formData
       );
       console.log(response.data);

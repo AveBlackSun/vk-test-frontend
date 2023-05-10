@@ -17,7 +17,7 @@ export default function PrivatePage(props) {
     const body = new FormData();
     body.append("file", image);
     console.log(body);
-    const response = await fetch("http://localhost:4000/api/upload/", {
+    const response = await fetch(`${process.env.API}/api/upload/`, {
       method: "POST",
       body,
     });

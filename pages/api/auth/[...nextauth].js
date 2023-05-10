@@ -11,13 +11,10 @@ export default NextAuth({
       async authorize(credentials, req) {
         const { email, password } = credentials;
         try {
-          const response = await axios.post(
-            "http://localhost:4000/api/login/",
-            {
-              email,
-              password,
-            }
-          );
+          const response = await axios.post(`${process.env.API}/api/login/`, {
+            email,
+            password,
+          });
           const { user } = response.data;
           // console.log("user: ", { user });
           return { user };

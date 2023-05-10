@@ -23,7 +23,7 @@ const Feed = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/posts");
+      const response = await axios.get("${process.env.API}/api/posts");
       const data = response.data;
       setAllPosts(data);
       console.log(data);

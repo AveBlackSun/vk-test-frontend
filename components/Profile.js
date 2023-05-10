@@ -20,7 +20,7 @@ const Profile = ({ name, data }) => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/users_posts/${data._id}`
+          `${process.env.API}/api/users_posts/${data._id}`
         );
         setPosts(response.data);
       } catch (error) {
@@ -37,7 +37,7 @@ const Profile = ({ name, data }) => {
       <div className="flex flex-col mr-10">
         {data.image && (
           <Image
-            src={`http://localhost:4000/uploads/${data.image}`}
+            src={`${process.env.API}/uploads/${data.image}`}
             width="130"
             height="130"
             alt="Profile image"
