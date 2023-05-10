@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    backendUrl: "http://localhost:4000",
+    API: "https://5344-82-118-29-139.ngrok-free.app",
   },
   images: {
     remotePatterns: [

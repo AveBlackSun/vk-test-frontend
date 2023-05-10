@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 // import { useSession } from "next/router";
 
 const Regiser = () => {
+  console.log(process.env.API);
   const router = useRouter();
   // const { data: session } = useSession();
   const [name, setName] = useState("");
@@ -14,7 +15,7 @@ const Regiser = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(name, email, password);
+
     try {
       const { data } = await axios.post(`${process.env.API}/users/`, {
         name,
